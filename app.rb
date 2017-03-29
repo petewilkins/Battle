@@ -19,12 +19,13 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
-    @player_2_fame_points = 100
+    @player_2_fame_points = $player_2.fp
     erb :play
   end
 
   post '/attack' do
     $player_1_attack = $player_1.attack(params[:player_1_attack])
+    $player_2.got_attacked(params[:player_1_attack])
     redirect '/fight'
   end
 
@@ -32,6 +33,7 @@ class Battle < Sinatra::Base
     @player_1_attack = $player_1_attack
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
+    @player_2_fame_points = $player_2.fp
     erb :fight
   end
 
