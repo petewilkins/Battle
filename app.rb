@@ -24,8 +24,8 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    $player_1_attack = $player_1.attack(params[:player_1_attack])
-    $player_2.got_attacked(params[:player_1_attack])
+    $player_1_attack = params[:player_1_attack]
+    $player_1.attack($player_2, params[:player_1_attack])
     redirect '/fight'
   end
 

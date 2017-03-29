@@ -2,20 +2,22 @@ class Player
 
   attr_reader :name, :attack, :fp
 
+  DEFAULT_FP = 100
+
   def initialize(name)
     @name = name
-    @fp = 100
+    @fp = DEFAULT_FP
   end
 
-  def attack(attack)
-    @attack = attack
+  def attack(player, option)
+    player.got_attacked(option)
   end
 
-  def got_attacked(attack)
+  def got_attacked(option)
     self.fp -= 10
   end
 
-  private
+
 
   attr_writer :fp
 
