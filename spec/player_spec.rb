@@ -17,11 +17,9 @@ describe Player do
     end
   end
 
-
   describe '#got_attacked' do
     it "reduces the player's fame points" do
       expect { john.got_attacked(option) }.to change { john.fp }.by(-12)
     end
   end
-
 end

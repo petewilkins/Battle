@@ -1,21 +1,25 @@
-<center>
-  <div>
-    <h1><%=@game.player_1.name%> vs. <%=@game.player_2.name%></h1>
-    <h2><%=@game.current_turn.name%>, its your turn to cause havoc!</h2>
-    <form action="/attack" method="post">
-      <label for="action">Options:</label>
-      <select name="attack_method" id="action">
-        <option value="has been sent to the Jungle">Jungle</option>
-        <option value="has been embarrassingly tripped up on the red carpet">Trip</option>
-        <option value="has had their private matters leaked">Sexy Tape</option>
-        <option value="has had their nudes leaked in the Sun (Ouch!)">Tabloid Story</option>
-      </select>
-      <button type="submit" value="Do It">Do It</button>
-    </form>
-  </div>
-
-  <div>
-      <h3><%=@game.player_1.name%>: <%=@game.player_1.fp%> Fame Points</h3>
-      <h3><%=@game.player_2.name%>: <%=@game.player_2.fp%> Fame Points</h3>
-  </div>
-</center>
+<body style="background: #f4c4f3;
+background: -webkit-linear-gradient(to left, #f4c4f3 , #fc67fa);
+background: linear-gradient(to left, #f4c4f3 , #fc67fa);
+font-family: Verdana, Geneva, sans-serif;">
+  <center>
+    <div>
+      <h1><%=@game.player_1.name%> vs. <%=@game.player_2.name%></h1>
+      <h2><%=@game.current_turn.name%>, its your turn to cause havoc!</h2>
+      <form action="/attack" method="post">
+        <label for="action">Options:</label>
+        <select name="attack_method" id="action">
+          <option value="has been sent to the Jungle">Jungle</option>
+          <option value="has been embarrassingly tripped up on the red carpet">Trip</option>
+          <option value="has had their private matters leaked">Sexy Tape</option>
+          <option value="has had their nudes leaked in the Sun (Ouch!)">Tabloid Story</option>
+        </select>
+        <button type="submit" value="Do It">Do It</button>
+      </form>
+    </div>
+    <div>
+        <h3><%=@game.player_1.name%>: <%=@game.player_1.fp%> Fame Points</h3>
+        <h3><%=@game.player_2.name%>: <%=@game.player_2.fp%> Fame Points</h3>
+    </div>
+  </center>
+</body>

@@ -6,9 +6,9 @@ class AttackLibrary
     @move = move
     @attack_options = {
       "has been sent to the Jungle" => 12,
-      "has been embarrassingly tripped up on the red carpet" => 15,
-      "has had their private matters leaked" => -20,
-      "has had their nudes leaked in the Sun (Ouch!)" => 30
+      "has been embarrassingly tripped up on the red carpet" => rand(5..15),
+      "has had their private matters leaked" => rand(-20..40),
+      "has had their nudes leaked in the Sun (Ouch!)" => rand(15..25)
     }
   end
 

@@ -13,5 +13,4 @@ feature 'switch player turn' do
     expect(page).not_to have_content("John, its your turn to cause havoc!")
     expect(page).to have_content("Mittens, its your turn to cause havoc!")
   end
-
 end

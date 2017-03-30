@@ -1,11 +1,16 @@
-<center>
-  <h3><%=@game.current_turn.name%> <%=@attack_method %> </h3>
-  <h4><%=@game.current_turn.name%>: <%=@game.current_turn.fp %>fp</h4>
-  <%if @game.current_turn.fp <= 0%>
-    <h2><%=@game.current_turn.name%>, your debauchery has gone too far! You are no longer a Z.<br />You are just a normal cunt now.<br />Jog on!</h2>
-  <%else%>
-    <form action="/play", method="get">
-      <button type='submit' value="Retaliate">Retaliate</button>
-    </form>
-  <%end%>
-</center>
+<body style="background: #f4c4f3;
+background: -webkit-linear-gradient(to left, #f4c4f3 , #fc67fa);
+background: linear-gradient(to left, #f4c4f3 , #fc67fa);
+font-family: Verdana, Geneva, sans-serif;">
+  <center>
+    <h3><%=@game.current_turn.name%> <%=@attack_method %> </h3>
+    <h4><%=@game.current_turn.name%>: <%=@game.current_turn.fp %>fp</h4>
+    <%if @game.current_turn.fp <= 0%>
+      <h2><%=@game.current_turn.name%>, your debauchery has gone too far! You are no longer a Z.<br />You are just a normal cunt now.<br />Jog on!</h2>
+    <%else%>
+      <form action="/play", method="get">
+        <button type='submit' value="Retaliate">Retaliate</button>
+      </form>
+    <%end%>
+  </center>
+</body>
