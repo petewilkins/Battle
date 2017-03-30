@@ -25,15 +25,15 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     @game = $game
-    $player_1_attack = params[:player_1_attack]
-    @game.attack(@game.player_2, $player_1_attack)
+    $attack_method = params[:attack_method]
+    @game.attack(@game.opponent, $attack_method)
     @game.switch_turns
     redirect '/fight'
   end
 
   get '/fight' do
     @game = $game
-    @player_1_attack = $player_1_attack
+    @attack_method = $attack_method
     erb :fight
   end
 

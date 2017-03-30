@@ -1,6 +1,8 @@
-<h3><%=@game.player_2.name%> <%=@player_1_attack %> </h3>
-<h4><%=@game.player_2.name%>: <%=@game.player_2.fp %>fp</h4>
+<center>
+  <h3><%=@game.current_turn.name%> <%=@attack_method %> </h3>
+  <h4><%=@game.current_turn.name%>: <%=@game.current_turn.fp %>fp</h4>
 
-<form action="/play", method="get">
-  <button type='submit' value="Retaliate">Retaliate</button>
-</form>
+  <form action="/play", method="get">
+    <button type='submit' value="Retaliate">Retaliate</button>
+  </form>
+</center>

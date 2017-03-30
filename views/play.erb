@@ -4,7 +4,7 @@
     <h2><%=@game.current_turn.name%>, its your turn to cause havoc!</h2>
     <form action="/attack" method="post">
       <label for="action">Options:</label>
-      <select name="player_1_attack" id="action">
+      <select name="attack_method" id="action">
         <option value="has been sent to the Jungle">Jungle</option>
         <option value="has been embarrassingly tripped up on the red carpet">Trip</option>
         <option value="has had their private matters leaked">Sexy Tape</option>
