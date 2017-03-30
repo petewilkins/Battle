@@ -13,4 +13,16 @@ describe Game do
       game.attack(mittens, option)
     end
   end
+
+  describe '#player_1' do
+    it 'retrieves the first player' do
+      expect(game.player_1).to eq john
+    end
+  end
+
+  describe '#player_1' do
+    it 'retrieves the second player' do
+      expect(game.player_2).to eq mittens
+    end
+  end
 end
