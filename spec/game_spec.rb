@@ -12,6 +12,17 @@ describe Game do
       expect(mittens).to receive(:got_attacked)
       game.attack(mittens, option)
     end
+
+    it 'changes player turn' do
+      game.attack(mittens, option)
+      expect(game.player_turn).to eq mittens
+    end
+  end
+
+  describe '#initialize' do
+    it "player 1's turn to start" do
+      expect(game.player_turn).to eq john
+    end
   end
 
   describe '#player_1' do

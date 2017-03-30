@@ -1,5 +1,6 @@
 <div>
   <h1><%=@game.player_1.name%> vs. <%=@game.player_2.name%></h1>
+  <h2><%=@game.player_turn.name%>, its your turn to cause havoc!</h2>
   <h3><%=@game.player_2.name%>: <%=@game.player_2.fp%> Fame Points</h3>
 </div>
 
@@ -9,7 +10,7 @@
   <option value="has been sent to the Jungle">Jungle</option>
   <option value="has been embarrassingly tripped up on the red carpet">Trip</option>
   <option value="has had their private matters leaked">Sexy Tape</option>
-  <option value="has...">Tabloid Story</option>
+  <option value="has their nudes leaked in the Sun (Ouch!)">Tabloid Story</option>
 </select>
-<button type="submit" value="submit">Do It</button>
+<button type="submit" value="Do It">Do It</button>
 </form>
