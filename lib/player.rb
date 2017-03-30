@@ -1,5 +1,7 @@
 class Player
 
+  #responsible for having a name and managing fame points
+
   attr_reader :name, :attack, :fp
 
   DEFAULT_FP = 100

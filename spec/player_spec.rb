@@ -17,12 +17,6 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'damages the opposition player' do
-      expect(mittens).to receive(:got_attacked)
-      john.attack(mittens, option)
-    end
-  end
 
   describe '#got_attacked' do
     it "reduces the player's fame points" do
