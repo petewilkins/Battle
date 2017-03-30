@@ -15,13 +15,14 @@ describe Game do
 
     it 'changes player turn' do
       game.attack(mittens, option)
-      expect(game.player_turn).to eq mittens
+      game.switch_turns
+      expect(game.current_turn).to eq mittens
     end
   end
 
   describe '#initialize' do
     it "player 1's turn to start" do
-      expect(game.player_turn).to eq john
+      expect(game.current_turn).to eq john
     end
   end
 

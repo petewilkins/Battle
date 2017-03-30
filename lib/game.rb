@@ -1,10 +1,10 @@
 class Game
 
-attr_reader :player_turn
+attr_reader :current_turn
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
-    @player_turn = player_1
+    @current_turn = player_1
   end
 
   def player_1
@@ -17,6 +17,15 @@ attr_reader :player_turn
 
   def attack(player, option)
     player.got_attacked(option)
-    @player_turn = player
+  end
+
+  def switch_turns
+    @current_turn = opponent_of(current_turn)
+  end
+
+  private
+
+  def opponent_of(the_player)
+    @players.select { |player| player != the_player }.first
   end
 end

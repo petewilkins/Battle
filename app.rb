@@ -27,6 +27,7 @@ class Battle < Sinatra::Base
     @game = $game
     $player_1_attack = params[:player_1_attack]
     @game.attack(@game.player_2, $player_1_attack)
+    @game.switch_turns
     redirect '/fight'
   end
 
