@@ -24,8 +24,9 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
+    @game = Game.new($player_1, $player_2)
     $player_1_attack = params[:player_1_attack]
-    $player_1.attack($player_2, params[:player_1_attack])
+    @game.attack($player_2, $player_1_attack)
     redirect '/fight'
   end
 

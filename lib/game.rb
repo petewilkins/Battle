@@ -8,4 +8,5 @@ class Game
   def attack(player, option)
     player.got_attacked(option)
   end
+  
 end

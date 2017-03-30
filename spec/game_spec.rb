@@ -8,7 +8,7 @@ describe Game do
   let(:option) {double :Jungle}
 
   describe '#attack' do
-    it "merks 'em" do
+    it "damages the opponent with option selected" do
       expect(mittens).to receive(:got_attacked)
       game.attack(mittens, option)
     end
