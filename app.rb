@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/attack_library'
 
 class Battle < Sinatra::Base
 
@@ -25,7 +26,8 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     @game = $game
-    $attack_method = params[:attack_method]
+    #$attack_method = params[:attack_method]
+    $attack_method = AttackLibrary.new(params[:attack_method])
     @game.attack(@game.opponent, $attack_method)
     @game.switch_turns
     redirect '/fight'
@@ -33,7 +35,7 @@ class Battle < Sinatra::Base
 
   get '/fight' do
     @game = $game
-    @attack_method = $attack_method
+    @attack_method = $attack_method.move
     erb :fight
   end
 

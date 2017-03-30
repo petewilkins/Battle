@@ -12,10 +12,8 @@ class Player
   end
 
   def got_attacked(option)
-    self.fp -= 10
+    self.fp -= option.find_fp_value
   end
-
-
 
   attr_writer :fp
 

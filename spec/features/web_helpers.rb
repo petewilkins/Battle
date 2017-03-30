@@ -7,7 +7,7 @@ end
 
 def full_on_fight
   sign_in_and_play
-  18.times {
+  16.times {
     click_button('Do It')
     click_button('Retaliate')
   }

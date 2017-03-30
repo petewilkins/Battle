@@ -3,7 +3,7 @@ describe Player do
 
   subject(:john) {described_class.new("John")}
   subject(:mittens) {described_class.new("Mittens")}
-  let(:option) {double :Jungle}
+  let(:option) {double :Jungle, find_fp_value: 12}
 
   describe '#name' do
     it 'returns player name' do
@@ -20,7 +20,7 @@ describe Player do
 
   describe '#got_attacked' do
     it "reduces the player's fame points" do
-      expect { john.got_attacked(option) }.to change { john.fp }.by(-10)
+      expect { john.got_attacked(option) }.to change { john.fp }.by(-12)
     end
   end
 
