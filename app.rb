@@ -15,26 +15,31 @@ class Battle < Sinatra::Base
     p params
     @player_1 = Player.new(params[:player_1_name])
     @player_2 = Player.new(params[:player_2_name])
-    $game = Game.new(@player_1, @player_2)
+    @game = Game.create(@player_1, @player_2)
     redirect '/play'
   end
 
+  before do
+    @game = Game.instance
+  end
+
   get '/play' do
-    @game = $game
     erb :play
   end
 
   post '/attack' do
-    @game = $game
-    $attack_method = AttackLibrary.new(params[:attack_method])
-    @game.attack(@game.opponent, $attack_method)
+    @attack_method = AttackLibrary.create(params[:attack_method])
+    @game.attack(@game.opponent, @attack_method)
     @game.switch_turns
     redirect '/fight'
   end
 
+  before do
+    @attack_method = AttackLibrary.instance
+  end
+
   get '/fight' do
-    @game = $game
-    @attack_method = $attack_method.move
+    @attack_method = @attack_method.move
     erb :fight
   end
 

@@ -12,6 +12,14 @@ class AttackLibrary
     }
   end
 
+  def self.create(move)
+    @attack_library = AttackLibrary.new(move)
+  end
+
+  def self.instance
+    @attack_library
+  end
+
   def find_fp_value
     attack_options[@move]
   end
